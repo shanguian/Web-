@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1.0">
+	<title>Document</title>
+	<style type="text/css">
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		body{
+			background: pink;
+		}
+		.box{
+			width: 120px;
+			height: 120px;
+			background: #ff0000;
+			transform: rotate(45deg) scale(0.85);
+			animation: love 1s infinite;
+			margin: 200px auto;
+			margin-bottom: 80px;
+			box-shadow: 0 0 20px  rgba(255,0,0,0.7);
+		}
+		/*爱心的形状*/
+		.box::before,
+		.box::after{
+			content: "";
+			position: absolute;
+			width: 120px;
+			height: 120px;
+			background: #ff0000;
+			border-radius: 50%;
+			box-shadow: 0 0 20px  rgba(255,0,0,0.7);
+		}
+		.box::before{
+			left: -68px;
+		}
+		.box::after{
+			top:-68px;
+		}
+		/*让爱心动起来*/
+		@keyframes love{
+			0%{
+				transform: rotate(45deg) scale(0.85);
+			}
+			50%{
+				transform: rotate(45deg) scale(1);
+			}
+			100%{
+				transform: rotate(45deg) scale(0.85);
+			}
+		}
+		p{
+                 text-align: center;
+                 font-size: 30px;
+                 font-weight: 520;
+                 color: rgba(255,0,0,0.5);
+		}
+	</style>
+</head>
+<body>
+	<div class="box"></div>
+	<p>you are the only the here</p>
+</body>
+</html>
